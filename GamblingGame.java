@@ -4,14 +4,25 @@ public class GamblingGame {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Gambling simulation program on master branch");
-        int win,loose;
-        int game = (int)(Math.random() * 2);
-        if (game == 1) {
-            everyDayStake+=everyGameBet;
-            System.out.println("Win the game :The amount is = "+everyDayStake);
-        } else {
-            everyDayStake-=everyGameBet;
-            System.out.println("Loose the game :The amount is ="+everyDayStake);
+            while (true) {
+                for (int i = 0; i < 100; i++) {
+
+                    int game = (int) (Math.random() * 2);
+                    if (game == 1) {
+                        everyDayStake +=everyGameBet;
+                    } else {
+                        everyDayStake -=everyGameBet;
+                    }
+                }
+
+                if (everyDayStake >= 150) {
+                    System.out.println("Win 50%  :So resign the day");
+                    break;
+                }
+                if (everyDayStake == 50) {
+                    System.out.println("Loose 50% :So resign the day");
+                    break;
+                }
+            }
         }
     }
-}
