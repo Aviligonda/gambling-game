@@ -41,5 +41,11 @@ public class GamblingGame {
         System.out.println("--------------------------------------------------");
         System.out.println("Total monthly winning amount is :" + maxMonthly);
         System.out.println("Total monthly loosing amount is :" + minMonthly);
+        System.out.println("---------------------------------------------------");
+        if (maxMonthly > minMonthly) {
+            System.out.println("Gambling continue next month ");
+        } else {
+            System.out.println("Stop gambling");
+        }
     }
 }
