@@ -4,7 +4,7 @@ public class GamblingGame {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Gambling simulation program on master branch");
-        int day, maxMonthly = 0, minMonthly = 0;
+        int day, maxMonthly = 0, minMonthly = 0, large = 0, small = 0;
         for (day = 1; day <= 30; day++) {
             while (true) {
                 for (int i = 0; i < 100; i++) {
@@ -21,6 +21,8 @@ public class GamblingGame {
                     System.out.println("Win 50%  :So resign the day");
                     System.out.println(" Day" + day + " :remaining amount is " + everyDayStake);
                     maxMonthly += everyDayStake;
+                    if (everyDayStake > large)
+                        large = everyDayStake;
 
                     break;
                 }
@@ -28,10 +30,14 @@ public class GamblingGame {
                     System.out.println("Loose 50% :So resign the day");
                     System.out.println(" Day" + day + ": remaining amount is " + everyDayStake);
                     minMonthly += everyDayStake;
+                    small = everyDayStake;
                     break;
                 }
             }
         }
+        System.out.println("-------------------------------------------------");
+        System.out.println("Luckiest winning amount is :" + large);
+        System.out.println("Unluckiest loosing amount is :" + small);
         System.out.println("--------------------------------------------------");
         System.out.println("Total monthly winning amount is :" + maxMonthly);
         System.out.println("Total monthly loosing amount is :" + minMonthly);
